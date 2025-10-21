@@ -20,6 +20,7 @@ import {
 import logo from '../../assets/logo.png'
 import miniLogo from '../../assets/mini-logo.svg'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
+import { RoutesConf } from '@/app/core/enums/routes.enums'
 
 export const Sidebar = () => {
   const navigate = useNavigate()
@@ -34,6 +35,10 @@ export const Sidebar = () => {
   }) => {
     dispatch(selectNav(nav.name))
     navigate(nav.url)
+  }
+
+  const goToHome = () => {
+    navigate(`${RoutesConf.main}`)
   }
 
   return (
@@ -53,13 +58,12 @@ export const Sidebar = () => {
           </ToggleButton>
         </TopBox>
 
-        <LogoWrapper isOpened={isOpened}>
+        <LogoWrapper isOpened={isOpened} onClick={goToHome}>
           <LogoImg
             src={isOpened ? logo : miniLogo}
             alt="Logo"
             isOpened={isOpened}
           />
-          {isOpened}
         </LogoWrapper>
 
         <UlContainer>

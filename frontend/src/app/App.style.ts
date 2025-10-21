@@ -8,9 +8,9 @@ const spin = keyframes`
 export const Container = styled.div`
   display: flex;
   height: 100vh;
-  width: 100vw;
-  overflow: hidden;
+  width: 100%;
   position: relative;
+  overflow-x: hidden;
 `
 
 export const CircularProgress = styled.div`

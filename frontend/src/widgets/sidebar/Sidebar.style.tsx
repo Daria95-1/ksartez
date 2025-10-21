@@ -35,6 +35,7 @@ export const Inner = styled.div`
 export const LogoWrapper = styled.div<AsideProps>`
   display: flex;
   align-items: center;
+  cursor: pointer;
 `
 
 export const LogoImg = styled.img<LogoImgProps>`
