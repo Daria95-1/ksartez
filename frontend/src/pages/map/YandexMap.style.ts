@@ -1,16 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+  flex: 1;
+  width: 100%;
+  height: 100%;
   position: relative;
-  width: 106rem;
-  height: 57.4rem;
 `
 
 export const DescriptionContainer = styled.div`
   position: absolute;
   top: 12.5rem;
-  right: 12.5rem;
-  width: 31.3rem;
+  right: 20rem;
+  max-width: 30rem;
   background: ${({ theme }) => theme.white};
   border: 0.1rem solid ${({ theme }) => theme.grey};
   border-radius: 0.5rem;
@@ -31,6 +32,13 @@ export const ButtonContainer = styled.button`
 
 export const DetailButton = styled.button`
   margin-top: 0.6rem;
-  padding: 0.3rem 0.6rem;
+  padding: 0.3rem 1rem;
+  border-radius: 1rem;
+  border: none;
+  background: ${({ theme }) => theme.lightOrange};
   cursor: pointer;
+
+  &:hover {
+    background: ${({ theme }) => theme.orange};
+  }
 `

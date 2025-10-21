@@ -1,7 +1,13 @@
 import { createHashRouter } from 'react-router-dom'
 import { App } from '../App'
 import { RoutesConf } from '../core/enums/routes.enums'
-import { Main, Places, People, Articles, Gallery } from './lazyRoutes'
+import {
+  Main,
+  People,
+  Articles,
+  Gallery,
+  UnderConstruction,
+} from './lazyRoutes'
 
 export const router = createHashRouter([
   {
@@ -11,10 +17,6 @@ export const router = createHashRouter([
       {
         index: true,
         element: <Main />,
-      },
-      {
-        path: RoutesConf.places,
-        element: <Places />,
       },
       {
         path: RoutesConf.people,
@@ -27,6 +29,10 @@ export const router = createHashRouter([
       {
         path: RoutesConf.gallery,
         element: <Gallery />,
+      },
+      {
+        path: RoutesConf.underConstruction,
+        element: <UnderConstruction />,
       },
     ],
   },

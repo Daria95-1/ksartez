@@ -1,7 +1,5 @@
+import { UnderConstruction } from '../under-construction/UnderConstruction'
+
 export const Gallery = () => {
-  return (
-    <div>
-      <div>Страница в разработке</div>
-    </div>
-  )
+  return <UnderConstruction />
 }
