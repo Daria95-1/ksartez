@@ -8,12 +8,14 @@ const spin = keyframes`
 export const Container = styled.div`
   display: flex;
   height: 100vh;
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
 `
 
 export const CircularProgress = styled.div`
   border: 0.4rem solid #f3f3f3;
-  border-top: 0.4rem solid ${({ theme }) => theme.blue};
+  border-top: 0.4rem solid ${({ theme }) => theme.orange};
   border-radius: 50%;
   width: 3rem;
   height: 3rem;
@@ -28,8 +30,14 @@ export const OutletStyle = styled.div`
 
 export const Loader = styled.div`
   display: flex;
-  justifycontent: center;
+  justify-content: center;
   align-items: center;
   flex-grow: 1;
   min-height: 18.75rem;
+`
+
+export const ErrorContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `

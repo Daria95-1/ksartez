@@ -7,6 +7,7 @@ import {
   DescriptionContainer,
   DetailButton,
 } from './YandexMap.style'
+import { truncateText } from '@/utils/textUtils'
 
 export const YandexMap = () => {
   const [selectedPlace, setSelectedPlace] = useState<Place | null>(null)
@@ -41,8 +42,8 @@ export const YandexMap = () => {
         <DescriptionContainer>
           <ButtonContainer onClick={handleClose}>✕</ButtonContainer>
           <h3>{selectedPlace.title}</h3>
-          <p>{selectedPlace.description}</p>
-          <DetailButton onClick={() => {}}>Далее</DetailButton>
+          <p>{truncateText(selectedPlace.description)}</p>
+          <DetailButton onClick={() => {}}>Подробнее</DetailButton>
         </DescriptionContainer>
       )}
     </Container>

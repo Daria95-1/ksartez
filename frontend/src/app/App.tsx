@@ -1,16 +1,22 @@
 import { Suspense } from 'react'
 import { theme } from '../theme'
 import { Outlet } from 'react-router-dom'
-import { CircularProgress, Container, Loader, OutletStyle } from './App.style'
+import {
+  CircularProgress,
+  Container,
+  ErrorContainer,
+  Loader,
+  OutletStyle,
+} from './App.style'
 import { ThemeProvider } from 'styled-components'
 import { ErrorBoundary, type FallbackProps } from 'react-error-boundary'
-import { Header } from '@/widgets/header/Header'
+import { Sidebar } from '@/widgets/sidebar/Sidebar'
 
 const FallbackUI: React.FC<FallbackProps> = ({ error, resetErrorBoundary }) => (
-  <div>
+  <ErrorContainer>
     <p>Что-то пошло не так: {error.message}</p>
     <button onClick={resetErrorBoundary}>Попробовать снова</button>
-  </div>
+  </ErrorContainer>
 )
 
 export const App = () => {
@@ -18,7 +24,7 @@ export const App = () => {
     <ErrorBoundary FallbackComponent={FallbackUI}>
       <ThemeProvider theme={theme}>
         <Container>
-          <Header />
+          <Sidebar />
           <Suspense
             fallback={
               <Loader>
